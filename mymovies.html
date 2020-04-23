@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>My Movies App</title>
+	<link rel="stylesheet" href="css/app.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body class="bg">
+	<div class="container-fluid">
+		<div class="row justify-content-center">
+			<div class="col-12 col-sm-6 col-md-3">
+				<form class="form-container table-dark">
+				<div class="row">
+					Welcome user <button class="btn btn-outline-light btn-favorites" type="button" onclick="window.location.href = 'favorites.html';">Favorites</button><button class="btn btn-outline-danger btn-logout">Logout</button>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col">
+					    <input type="text" class="form-control search" placeholder="Search movies">
+				  	</div>				 
+				  	<div class="col">
+						<button class="btn btn-secondary btn-block">Search</button>
+				  </div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col">
+					<table class="table table-dark">
+		                <tr>
+		                	<td>Guardians of the Galaxy Vol. 2</td>
+		                </tr>
+			            <tr>
+			            	<td>2017</td>
+			            </tr>
+			            <tr>
+			            	<td>Action, Adventure, Comedy, Sci-Fi</td>
+			            </tr>
+			            <tr>
+			            	<td>The Guardians struggle to keep together as a team while dealing with their personal family issues, notably Star-Lord's encounter with his father the ambitious celestial being Ego.</td>
+			            </tr>
+		            </table>
+					</div>
+					<div class="col">
+						<img src="https://m.media-amazon.com/images/M/MV5BNjM0NTc0NzItM2FlYS00YzEwLWE0YmUtNTA2ZWIzODc2OTgxXkEyXkFqcGdeQXVyNTgwNzIyNzg@._V1_SX300.jpg	" alt="" class="movimage"> 
+						<p><center><button class="btn btn-warning btn-sm">Add to favorites</button></center></p>
+					</div>
+				</div>
+
+
+				</form>
+			</div>
+		</div>
+	</div>
+	
+</body>

@@ -1,0 +1,64 @@
+.bg{
+	background: url('../images/bg-dark.jpg') no-repeat; 
+	width: 100%;
+	height: 100vh;
+	background-size: cover;
+}
+.form-container{
+	position: absolute;
+	top: 15vh;
+	background: #fff;
+	padding: 30px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px 0px #000;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+  width: 25%;
+}
+.movimage {
+  display: block;
+  width: 75%;
+  width: 75%;
+  margin-left: auto;
+}
+.favimage {
+  display: block;
+  width: 25%;
+  width: 25%;
+  margin-right: auto;
+}
+.search{
+	width: 700px;
+}
+.btn-sm{
+	margin-left: 70px;
+}
+.btn-logout{
+	position: absolute; 
+	right:1.5vh; 
+	top: 1.5vh;
+}
+.btn-favorites{
+	position: absolute; 
+	right:9.5vh; 
+	top: 1.5vh;
+}
+.btn-remove{
+	margin-bottom: 20px;
+}
+@media only screen and (max-width: 900px){
+	.bg{
+		background-size: cover;
+	}
+}
+
+@media only screen and (max-width: 1000px){
+	.btn-favorites{
+		right:15.5vh; 
+	}
+}
