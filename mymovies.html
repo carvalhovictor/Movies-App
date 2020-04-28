@@ -13,17 +13,17 @@
 		{{movie.title}}
 		<div class="row justify-content-center">
 			<div class="col-12 col-sm-6 col-md-3">
-				<form class="form-container table-dark">
+				<form class="form-container table-dark" name="movieForm">
 				<div class="row">
 					Welcome <button class="btn btn-outline-light btn-favorites" type="button" onclick="window.location.href = 'favorites.html';">Favorites</button><button class="btn btn-outline-danger btn-logout">Logout</button>
 				</div>
 				<hr>
 				<div class="row">
 					<div class="col">
-					    <input type="text" class="form-control search" ng-model="search" placeholder="Search movies">
+					    <input type="text" class="form-control search" ng-model="search" ng-required="true" placeholder="Search movies">
 				  	</div>				 
 				  	<div class="col">
-						<button class="btn btn-secondary btn-block" ng-click="loadMovie(search)">Search</button>
+						<button class="btn btn-secondary btn-block" ng-disabled="movieForm.$invalid" ng-click="loadMovie(search)">Search</button>
 				  </div>
 				</div>
 				<hr>
