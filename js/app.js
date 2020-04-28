@@ -16,7 +16,7 @@ angular.module("moviesApp").controller("registerCtrl", function($scope, $http){
 	};
 	var request = $http(config);
 	request.then(function(response){
-		window.location.href = 'mymovies.html';
+		window.location.href = 'search.html';
 	},function(error){
 		console.log(error.data);
 	});
@@ -38,7 +38,7 @@ angular.module("moviesApp").controller("loginCtrl", function($scope, $http){
 	var request = $http(config);
 	request.then(function(response){
 		if(response.data == 1){
-			window.location.href = 'mymovies.html';
+			window.location.href = 'search.html';
 		}else{
 			$scope.msg = response.data;
 		}	
