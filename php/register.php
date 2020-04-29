@@ -10,10 +10,11 @@ header('Access-Control-Allow-Credentials: true');
 	$request = json_decode($postdata);
 
 	$username = $request->username;
+    $alias = $request->alias;
 	$password = $request->password;
 
 
-	$query = "INSERT INTO USERS (EMAIL, PASSWORD) VALUES ('$username', '$password')";
+	$query = "INSERT INTO USERS (EMAIL, ALIAS, PASSWORD) VALUES ('$username', '$alias', '$password')";
 
     $db->query($query);
 

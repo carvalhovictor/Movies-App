@@ -1,0 +1,45 @@
+<div class="container-fluid" ng-controller="searchCtrl">
+	<div class="row justify-content-center">
+		<div class="col-12 col-sm-6 col-md-3">
+			<form class="form-container table-dark">
+			<div class="row">
+				{{user}} <a href="#!favorites/{{user}}"><button class="btn btn-outline-light btn-favorites" type="button">Favorites</button></a><button class="btn btn-outline-danger btn-logout">Logout</button>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="col">
+				    <input type="text" class="form-control search" ng-model="search" ng-required="true" placeholder="Search movies">
+			  	</div>				 
+			  	<div class="col">
+					<button class="btn btn-secondary btn-block" ng-disabled="movieForm.$invalid" ng-click="loadMovie(search)">Search</button>
+			  </div>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="col" ng-show="flag">
+				<table class="table table-dark">
+	                <tr>
+	                	<td>{{movie.Title}}</td>
+	                </tr>
+		            <tr>
+		            	<td>{{movie.Year}}</td>
+		            </tr>
+		            <tr>
+		            	<td>{{movie.Genre}}</td>
+		            </tr>
+		            <tr>
+		            	<td>{{movie.Plot}}</td>
+		            </tr>
+	            </table>
+				</div>
+				<div class="col" ng-show="flag">
+					<a href="{{movie.Poster}}" target="_blank"><img src="{{movie.Poster}}" alt="" class="movimage"></a>
+					<p><center><button class="btn btn-warning btn-sm">Add to favorites</button></center></p>
+				</div>
+			</div>
+			<p>{{msg}}</p>
+
+			</form>
+		</div>
+	</div>
+</div>
