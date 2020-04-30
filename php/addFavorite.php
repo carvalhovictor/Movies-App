@@ -8,14 +8,18 @@ header('Access-Control-Allow-Credentials: true');
 
 	$postdata = file_get_contents("php://input");
 	$request = json_decode($postdata);
+    
+	$email = $request->email;
+	$title = $request->title;
+  
+    $result = $db->query("SELECT ID FROM USERS WHERE EMAIL = '$email'");
 
-	$username = $request->username;
-    $alias = $request->alias;
-	$password = $request->password;
+    while ( $row = $result->fetch_assoc())  {
+        $id = $row['ID'];
+    }
 
-	$query = "INSERT INTO USERS (EMAIL, ALIAS, PASSWORD) VALUES ('$username', '$alias', '$password')";
-
-    $db->query($query);
-
+    $query = "INSERT INTO FAVORITES (USERID, MOVIETITLE) VALUES ('$id', '$title')";
+	$db->query($query);
+ 
     $db->close();
  ?>	

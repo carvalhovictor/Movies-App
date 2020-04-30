@@ -1,2 +1,2 @@
-angular.module("moviesApp", ["ngRoute"]);
+angular.module("moviesApp", ["ngRoute", "ngMaterial"]);
 

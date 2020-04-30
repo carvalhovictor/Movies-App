@@ -7,6 +7,7 @@ angular.module("moviesApp").controller("searchCtrl", function($scope, $http, $ro
 		$http.get('http://www.omdbapi.com/?t='+title+'&apikey=1ebdc3a0&plot=short').then(function(response){
 			$scope.movie = response.data;
 			$scope.flag = true;
+			delete $scope.added;
 			delete $scope.msg;
 			if(response.data.Response == 'False'){
 				$scope.flag = false;
@@ -16,9 +17,21 @@ angular.module("moviesApp").controller("searchCtrl", function($scope, $http, $ro
 		});
 	};
 
-	/*$http.get('http://localhost:8888/movies/getSession.php').then(function(response){
-		console.log(response.data);
-		$scope.user = response.data;
-	});
-	*/
+	$scope.addFavorite = function(){
+		var config = {
+		method : 'POST',
+		url : 'php/addFavorite.php',
+		data : {
+			'title' : $scope.movie.Title,
+			'email' : $scope.user
+			}
+		};
+		var request = $http(config);
+		request.then(function(response){
+			$scope.flag = false;
+			$scope.added = "Movie added to favorites";
+		},function(error){
+			console.log(error.data);
+		});
+	}
 });

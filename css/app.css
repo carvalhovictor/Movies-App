@@ -12,8 +12,13 @@
 	border-radius: 10px;
 	box-shadow: 0px 0px 10px 0px #000;
 }
-p{
+.red{
 	color: red;
+	text-align: center;
+	font-weight: bold;
+}
+.white{
+	color: white;
 	text-align: center;
 	font-weight: bold;
 }
@@ -54,6 +59,13 @@ p{
 }
 .btn-remove{
 	margin-bottom: 20px;
+}
+#link{
+	color: white;
+}
+md-toast.md-success-toast-theme div.md-toast-content{
+    color: white !important;
+    background-color: green !important;
 }
 @media only screen and (max-width: 900px){
 	.bg{

@@ -24,6 +24,7 @@ header('Access-Control-Allow-Credentials: true');
         $_SESSION['user'] = $username;
 		$returnValue = 1;
 	}
+
     echo $returnValue;
     $db->close();
  ?>	

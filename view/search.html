@@ -34,11 +34,11 @@
 				</div>
 				<div class="col" ng-show="flag">
 					<a href="{{movie.Poster}}" target="_blank"><img src="{{movie.Poster}}" alt="" class="movimage"></a>
-					<p><center><button class="btn btn-warning btn-sm">Add to favorites</button></center></p>
+					<p><center><button class="btn btn-warning btn-sm" type="button" ng-click="addFavorite()">Add to favorites</button></center></p>
 				</div>
 			</div>
-			<p>{{msg}}</p>
-
+			<p class="red">{{msg}}</p>
+			<p class="white">{{added}}</p>
 			</form>
 		</div>
 	</div>

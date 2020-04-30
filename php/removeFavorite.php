@@ -6,14 +6,12 @@ header('Access-Control-Allow-Credentials: true');
 	
     require_once "db_connect.php";
 
-	$postdata = file_get_contents("php://input");
+    $postdata = file_get_contents("php://input");
 	$request = json_decode($postdata);
+    $id = $request->id;
 
-	$username = $request->username;
-    $alias = $request->alias;
-	$password = $request->password;
 
-	$query = "INSERT INTO USERS (EMAIL, ALIAS, PASSWORD) VALUES ('$username', '$alias', '$password')";
+   	$query = "DELETE FROM FAVORITES WHERE ID = '$id'";
 
     $db->query($query);
 
