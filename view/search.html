@@ -1,9 +1,9 @@
-<div class="container-fluid" ng-controller="searchCtrl">
+<div class="container-fluid" ng-controller="searchCtrl" ng-show="session">
 	<div class="row justify-content-center">
 		<div class="col-12 col-sm-6 col-md-3">
 			<form class="form-container table-dark">
 			<div class="row">
-				{{user}} <a href="#!favorites/{{user}}"><button class="btn btn-outline-light btn-favorites" type="button">Favorites</button></a><button class="btn btn-outline-danger btn-logout">Logout</button>
+				{{user}} <a href="#!favorites"><button class="btn btn-outline-light btn-favorites" type="button">Favorites</button></a><button class="btn btn-outline-danger btn-logout" type="button" ng-click="logout()">Logout</button>
 			</div>
 			<hr>
 			<div class="row">
@@ -11,7 +11,7 @@
 				    <input type="text" class="form-control search" ng-model="search" ng-required="true" placeholder="Search movies">
 			  	</div>				 
 			  	<div class="col">
-					<button class="btn btn-secondary btn-block" ng-disabled="movieForm.$invalid" ng-click="loadMovie(search)">Search</button>
+					<button class="btn btn-secondary btn-block" type="submit" ng-disabled="movieForm.$invalid || !search" ng-click="loadMovie(search)">Search</button>
 			  </div>
 			</div>
 			<hr>

@@ -6,16 +6,15 @@
 			<img src="images/camera.png" class="center" alt="">
 			  <div class="form-group">
 			    <input type="email" ng-model="user.email" class="form-control" placeholder="enter your email">
-			  </div>
-			  <div class="form-group">
-			    <input type="text" ng-model="user.alias" class="form-control" placeholder="enter your alias">
-			  </div>				  
+			  </div>			  
 			  <div class="form-group">
 			    <input type="password" ng-model="user.password" class="form-control" placeholder="password">
 			  </div>
 			  <div class="form-group form-check">
 			  </div>
 			  <button ng-click="register()" class="btn btn-primary btn-block">Register</button>
+			  <hr>
+				<p class="red">{{msg}}</p>	
 			</form>
 		</div>
 	</div>

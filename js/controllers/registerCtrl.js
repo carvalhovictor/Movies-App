@@ -5,15 +5,18 @@ angular.module("moviesApp").controller("registerCtrl", function($scope, $http, $
 			method : 'POST',
 			url : 'php/register.php',
 			data : {
-				'username' : $scope.user.email,
-				'alias' : $scope.user.alias,
+				'email' : $scope.user.email,
 				'password' : $scope.user.password
-				
 			}
 		};
 		var request = $http(config);
 		request.then(function(response){
-			$location.path("/search/"+$scope.user.email);
+			console.log(response.data);
+			if(response.data == 1){
+				$location.path("/search");
+			}else{
+				$scope.msg = response.data;
+			}
 		},function(error){
 			console.log(error.data);
 		});

@@ -1,5 +1,16 @@
-angular.module("moviesApp").controller("favoritesCtrl", function($scope, $http, $routeParams, $filter, $mdToast, $document){
-	$scope.user = $routeParams.user;
+angular.module("moviesApp").controller("favoritesCtrl", function($scope, $http, $filter, $mdToast, $document, $location){
+	$scope.session = false;
+
+	$http.get('php/getSession.php').then(function(response){
+		if(response.data == 0){
+			$location.path("/login");
+		}else{
+			$scope.session = true;
+			$scope.user = response.data;
+			getFavorites();
+		}
+	});
+
 	var getFavorites = function(){
 		var config = {
 		method : 'POST',
@@ -10,6 +21,7 @@ angular.module("moviesApp").controller("favoritesCtrl", function($scope, $http, 
 		};
 		var request = $http(config);
 		request.then(function(response){
+			console.log(response.data);
 			$scope.movies = response.data;
 		},function(error){
 			console.log(error.data);
@@ -46,5 +58,5 @@ angular.module("moviesApp").controller("favoritesCtrl", function($scope, $http, 
 		    .parent('form')
 		);
 	};
-	getFavorites();
+	
 });

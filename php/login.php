@@ -9,19 +9,19 @@ header('Access-Control-Allow-Credentials: true');
 	$postdata = file_get_contents("php://input");
 	$request = json_decode($postdata);
     
-	$username = $request->username;
+	$email = $request->email;
 	$password = $request->password;
     $returnValue;
 
-    $query="SELECT EMAIL, PASSWORD FROM USERS WHERE EMAIL='$username' AND PASSWORD='$password'";
+    $query="SELECT EMAIL, PASSWORD FROM USERS WHERE EMAIL='$email' AND PASSWORD='$password'";
 
     $result = $db->query($query);
     
  	if ($result->num_rows == 0){
-		$returnValue = 'Invalid username/password';
+		$returnValue = 'Invalid email/password';
 	}else{
         session_start();
-        $_SESSION['user'] = $username;
+        $_SESSION['user'] = $email;
 		$returnValue = 1;
 	}
 

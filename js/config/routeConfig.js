@@ -7,11 +7,11 @@ angular.module("moviesApp").config(function($routeProvider) {
         templateUrl: "view/register.html",
         controller: "registerCtrl" 
     });
-    $routeProvider.when("/search/:user", {
+    $routeProvider.when("/search", {
         templateUrl: "view/search.html",
         controller: "searchCtrl" 
     });
-    $routeProvider.when("/favorites/:user", {
+    $routeProvider.when("/favorites", {
         templateUrl: "view/favorites.html",
         controller: "searchCtrl" 
     });

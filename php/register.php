@@ -9,13 +9,27 @@ header('Access-Control-Allow-Credentials: true');
 	$postdata = file_get_contents("php://input");
 	$request = json_decode($postdata);
 
-	$username = $request->username;
-    $alias = $request->alias;
+	$email = $request->email;
 	$password = $request->password;
 
-	$query = "INSERT INTO USERS (EMAIL, ALIAS, PASSWORD) VALUES ('$username', '$alias', '$password')";
+	
 
-    $db->query($query);
+	$query="SELECT EMAIL FROM USERS WHERE EMAIL='$email'";
+
+    $result = $db->query($query);
+    
+ 	if ($result->num_rows > 0){
+		$returnValue = 'This email is already registered';
+	}else{
+		$query = "INSERT INTO USERS (EMAIL, PASSWORD) VALUES ('$email', '$password')";
+		$db->query($query);
+        session_start();
+        $_SESSION['user'] = $email;
+		$returnValue = 1;
+	}
+
+
+    echo $returnValue;
 
     $db->close();
  ?>	
