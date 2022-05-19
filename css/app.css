@@ -78,3 +78,7 @@ md-toast.md-success-toast-theme div.md-toast-content{
 		right:15.5vh; 
 	}
 }
+
+.none {
+	background-color: #000;
+}
